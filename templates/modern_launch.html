@@ -1,0 +1,47 @@
+<html>
+  <body style="margin:0;padding:0;font-family:'Helvetica Neue',Arial,sans-serif;background:#f5f5f5;color:#1f2933;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f5f5f5;padding:24px 0;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(15,23,42,0.08);">
+            <tr>
+              <td style="background:#1f4bf2;padding:32px 36px;color:#ffffff;">
+                <h1 style="margin:0;font-size:24px;letter-spacing:0.5px;">${headline}</h1>
+                <p style="margin:12px 0 0;font-size:15px;opacity:0.85;">${subheadline}</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:32px 36px;font-size:15px;line-height:1.6;">
+                <p style="margin:0 0 16px;">Hi ${recipient_name},</p>
+                <p style="margin:0 0 16px;">${intro}</p>
+                <div style="background:#f1f5ff;border-left:4px solid #1f4bf2;padding:16px 20px;margin:24px 0;border-radius:8px;">
+                  <p style="margin:0;font-weight:600;color:#1f4bf2;">Highlights</p>
+                  <ul style="margin:12px 0 0;padding-left:18px;">
+                    ${highlights}
+                  </ul>
+                </div>
+                <p style="margin:0 0 16px;">${body_paragraph}</p>
+                <table role="presentation" cellspacing="0" cellpadding="0" style="margin:28px 0;">
+                  <tr>
+                    <td>
+                      <a href="${cta_url}" style="display:inline-block;background:#1f4bf2;color:#ffffff;text-decoration:none;padding:14px 28px;border-radius:8px;font-weight:600;">
+                        ${cta_label}
+                      </a>
+                    </td>
+                    <td style="padding-left:16px;font-size:13px;color:#64748b;">${cta_caption}</td>
+                  </tr>
+                </table>
+                <p style="margin:0 0 16px;">${closing}</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="background:#0f172a;padding:20px 36px;color:#94a3b8;font-size:12px;text-align:center;">
+                <p style="margin:0;">${footer_note}</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
