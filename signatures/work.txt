@@ -1,6 +1,0 @@
-${name}
-${role} · ${company}
-Email: ${email}
-Phone: ${phone}
-
-${tagline}
