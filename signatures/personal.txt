@@ -1,4 +1,0 @@
-${name}
-${favorite_quote}
-${website_label}: ${website}
-${social_label}: ${social_link}
