@@ -8,6 +8,7 @@ This directory contains an [FastMCP](https://github.com/modelcontextprotocol) se
 - **Calendar invites** – automatically generate `.ics` calendar requests without using Google Calendar APIs.
 - **Diagnostics** – optional SMTP telemetry (TLS handshake, EHLO features, NOOP response).
 - **Inbox snapshots** – list unread mail, search by subject, or fetch the latest message from a sender via IMAP.
+- **Email spooler** – queue payloads locally and deliver them later from an environment with SMTP connectivity.
 
 ## Files
 
@@ -16,7 +17,8 @@ This directory contains an [FastMCP](https://github.com/modelcontextprotocol) se
 - `gmail_smtp.example.env` — template for configuring Gmail SMTP/IMAP credentials.
 - `templates/` — sample text/HTML templates (`meeting_followup`, `status_digest`, `modern_launch`). Add your own as needed.
 - `signatures/` — reusable signatures (`work`, `personal`) in text/HTML form.
-- `scripts/` — optional helpers for sending pre-built payloads (see below).
+- `spool/` — queue directories (`pending/`, `sent/`, `failed/`) for offline delivery workflows.
+- `scripts/` — helpers for sending presets, queueing, and delivering spool payloads.
 - `~/.config/mcp/gmail_smtp.env` — dotenv-style file loaded for credentials (username, app password, etc.). Set `GMAIL_SMTP_ENV_FILE` to point elsewhere if desired.
 
 ## Configuration
@@ -146,6 +148,26 @@ PY
 ```
 
 Add more payloads by creating modules inside `scripts/payloads/` that expose a `build_payload()` function.
+
+### Queueing and delivering via spool
+
+When the execution environment cannot reach Gmail directly, queue the payload and deliver it later from a machine with SMTP access:
+
+```bash
+# Queue a message without sending it
+.venv/bin/python scripts/send_email.py modern_launch --queue-only
+
+# Inspect queued files (JSON) under spool/pending/
+ls spool/pending
+
+# Deliver everything in the queue (run this where Gmail is reachable)
+.venv/bin/python scripts/deliver_spool.py
+
+# Optional dry run
+.venv/bin/python scripts/deliver_spool.py --dry-run
+```
+
+Successful deliveries move the entry to `spool/sent/`; failures (with traceback) land in `spool/failed/`.
 
 ### Inbox helpers
 
