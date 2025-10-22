@@ -1,0 +1,19 @@
+${headline}
+${subheadline}
+
+Hi ${recipient_name},
+
+${intro}
+
+Highlights:
+${highlights}
+
+${body_paragraph}
+
+Call to action: ${cta_label}
+Link: ${cta_url}
+${cta_caption}
+
+${closing}
+
+${footer_note}
