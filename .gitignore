@@ -8,3 +8,6 @@ __pycache__/
 # Local environment files
 *.env
 !*.example.env
+spool/pending/*.json
+spool/sent/*.json
+spool/failed/*.json

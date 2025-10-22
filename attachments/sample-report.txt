@@ -1,0 +1,5 @@
+Inside Sales Report
+====================
+- Opportunities reviewed.
+- Pipeline metrics attached.
+- Prepared automatically for Codex spool testing.

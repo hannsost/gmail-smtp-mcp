@@ -129,6 +129,21 @@ Notes:
 ```
 
 ### Using the preset sender script
+### Preparing sample assets via tool
+
+Call the MCP tool `gmail_prepare_sample_assets` when you need ready-to-use files. It creates small attachments under `attachments/` and an inline PNG in `assets/` and returns the absolute paths.
+Use the returned values when invoking `gmail_send_email_with_attachments` directly (relieves you from having to create files manually inside the sandbox).
+
+### Managing templates and signatures
+
+Use the following MCP tools before sending live emails:
+
+- `gmail_list_templates` / `gmail_list_signatures` — list existing snippets and preview the first few characters of the text/HTML files.
+- `gmail_create_template` / `gmail_create_signature` — add new entries. If you omit bodies, defaults are generated automatically. Set `overwrite=true` to replace existing files.
+- `gmail_list_sample_assets` — return the current sample attachments and inline image paths without regenerating them.
+
+This lets you script a full workflow: list, create, stage assets, then send or queue the email payload.
+
 
 For reproducible tests you can run predefined payloads stored in `scripts/payloads/`:
 
@@ -168,6 +183,7 @@ ls spool/pending
 ```
 
 Successful deliveries move the entry to `spool/sent/`; failures (with traceback) land in `spool/failed/`.
+You can also queue programmatically via the MCP tool `gmail_queue_email_with_attachments`; provide the same JSON payload fields and the spooler will deliver on its next pass.
 
 ### Inbox helpers
 

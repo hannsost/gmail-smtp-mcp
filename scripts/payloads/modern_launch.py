@@ -10,7 +10,7 @@ def build_payload() -> dict:
     now = datetime.now().astimezone()
     project_root = Path(__file__).resolve().parents[2]
     return {
-        "to": ["kjmsumatra@gmail.com"],
+        "to": ["stleoste@gmail.com"],
         "subject": "Nimbus UI launch preview",
         "body": "(fallback text)",
         "body_template": "modern_launch",
@@ -42,7 +42,7 @@ def build_payload() -> dict:
         },
         "inline_images": [
             {
-                "path": "/tmp/codex-inline.png",
+                "path": str((project_root / "assets" / "codex-inline.png").resolve()),
                 "cid": "codex-inline",
                 "ensure_sample_png": True,
             }

@@ -1,0 +1,16 @@
+Hello {{recipient_name | Hiring Manager}},
+
+I hope you are doing well. I'm Hanns Leonhard Osterbrink, a fullstack developer focused on building production-ready web and mobile applications. I enjoy partnering with product and engineering teams to translate ideas into maintainable, user-centered software.
+
+Key ways I can help your team:
+- Delivering polished user experiences across web and mobile products.
+- Designing clean, reliable APIs and integrations that scale with growing user bases.
+- Owning projects end-to-end, from architecture and implementation through launch support.
+
+I'd love to learn more about the challenges {{company_name}} is tackling and explore how I can contribute. I'm glad to walk through past case studies or share code samples tailored to your needs.
+
+I've attached my CV for quick reference. You can also see selected work at https://github.com/hannsost and connect with me on LinkedIn at https://linkedin.com/in/leon-osterbrink-5683b1239.
+
+Best regards,
+Hanns Leonhard Osterbrink
+Fullstack Developer
