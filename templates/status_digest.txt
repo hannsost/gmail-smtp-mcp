@@ -1,0 +1,15 @@
+Hello ${team},
+
+Here is the status digest for ${period}:
+
+Highlights:
+${highlights}
+
+Risks:
+${risks}
+
+Upcoming milestones:
+${milestones}
+
+Best,
+${sender_name}
